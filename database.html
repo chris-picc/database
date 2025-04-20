@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+   <meta name="robots" content="noindex, nofollow">
+  <title>Database</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="fonts/NotoSans-Regular.css">
+  <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet'>
+
+
+	
+    <script>
+        function verificaPassword() {
+            var passwordInserita = document.getElementById("password").value;
+            var passwordCorretta = "casa"; // Inserisci qui la tua password
+
+            if (passwordInserita === passwordCorretta) {
+                // Mostra la sezione protetta
+                document.getElementById("sezione-protetta").style.display = "block";
+                // Nascondi la sezione di accesso
+                document.getElementById("sezione-accesso").style.display = "none";
+            } else {
+                alert("Password errata. Riprova.");
+            }
+        }
+    </script>
+	
+	
+	
+<!-- <script src="script.js"></script>	 -->
+<!-- <script> -->
+	<!-- function logLastModifiedDate() { -->
+	  <!-- const fileName = 'Artikelübersicht.xlsx'; -->
+	  <!-- const lastModified = Date.now(); -->
+	  <!-- const date = new Date(lastModified); -->
+	  <!-- const formattedDate = date.toLocaleDateString(); -->
+	  <!-- const formattedTime = date.toLocaleTimeString(); -->
+	<!-- console.log(`Data e orario di ultima modifica di ${fileName}: ${formattedDate} ${formattedTime}`); -->
+<!-- } -->
+
+	<!-- document.addEventListener('mousemove', logLastModifiedDate); -->
+<!-- </script> -->
+
+
+
+	
+	 
+<!-- <script src="scriptVK.js" defer></script>  -->
+	
+</head>
+
+<body>
+
+
+<div id="sezione-accesso">
+        <h2>Inserisci la password per accedere:</h2>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <button onclick="verificaPassword()">Accedi</button>
+</div>
+
+<div id="sezione-protetta" style="display: none;">
+
+<div id="contA">
+
+
+
+  <div id="contL"><br>
+
+    <nav id="btn_Angeb" class="abstand1" ><button id="btn_ANG" style="font-weight: bold; color: #260cf0" onclick="searchAng()">aktuelle Angebote</button></nav>
+    
+    <nav id="btn_Men_Auf" class="abstand1"><button id="btn_MA" style="font-weight: bold; color: #9c0fa1" onclick="searchMen_Auf()">Menge in Auftrag</button></nav>
+    
+    <nav id="btn_Minus" class="abstand1"><button id="btn_MNS" style="font-weight: bold; color: #d51c1c" onclick="searchMinus()">Bestand in Minus</button></nav>
+	
+    <nav id="btn_Sper" class="abstand1"><button id="btn_SPR" style="color: #d51c1c" onclick="searchSper()">zum Sperren?</button></nav>
+
+    <nav id="btn_Eintreff" class="abstand1"><button id="btn_EINTR" style="color: black" onclick="searchEintr()">Eintreffdatum?</button></nav>
+
+    <nav id="btn_Brot" class="abstand1"><button id="btn_BROT" style="color: black" onclick="searchBrot()">Brot+Focacce</button></nav>    
+
+    <!-- <nav id="btn_Panett" class="abstand1"><button id="btn_PANETT" class="saison" style="color: black" onclick="searchPanett()">Panettoni</button></nav>
+
+    <nav id="btn_Pandor" class="abstand1"><button id="btn_PANDOR" class="saison" style="color: black" onclick="searchPandor()">Pandori</button></nav>
+
+    <nav id="btn_Weihn" class="abstand1"><button id="btn_WEIHN" class="saison" style="color: black" onclick="searchWeihn()">Weihnachten-3</button></nav> -->
+
+
+    <nav id="btn_OstEi" class="abstand1"><button id="btn_OSTEI" class="saison" style="color: black" onclick="searchOstEi()">Ostereier</button></nav>
+
+    <nav id="btn_OstEiKin" class="abstand1"><button id="btn_OSTEIKIN" class="saison" style="color: black" onclick="searchOstEiKin()">Ostereier Kinder</button></nav>
+
+    <nav id="btn_Colom" class="abstand1"><button id="btn_COLOM" class="saison" style="color: black" onclick="searchColom()">Colombe</button></nav>
+
+    <nav id="btn_searchColomBaul" class="abstand1"><button id="btn_COLOMBBAUL" class="saison" style="color: black" onclick="searchColomBaul()">Colombe Bauli</button></nav>
+
+    <!-- <nav id="btn_searchColomVF" class="abstand1"><button id="btn_COLOMBVF" class="saison" style="color: black" onclick="searchColomVf()">Colombe Vecchio Forno</button></nav> -->
+
+    
+    <nav id="btn_frei_Art" class="abstand1"><button id="btn_FRART" class="fr_art" style="font-weight: bold; color: white" onclick="searchFrart()">Freie Artikel-Nr</button></nav>
+
+    <nav id="btn_noBild" class="abstand1"><button id="btn_NOBILD" class="fr_art" style="font-weight: bold; color: yellow" onclick="searchNoBild()">No Image</button></nav>    
+
+	<nav style="font-weight: bold" class="abstand1">
+        <input type="text" id="queryEAN" oninput="this.value = this.value.toUpperCase()" maxlength="13"
+          name="qpr" placeholder="EAN-Code...">
+          <button onclick="searchEAN()">GO!</button>
+    </nav>
+
+	<nav style="font-weight: bold" class="abstand1">
+        <input type="text" id="queryVK2" oninput="this.value = this.value.toUpperCase()" maxlength="17"
+          name="qpr" placeholder="Wiederverkäufer...">
+          <button onclick="searchVK2()">GO!</button>
+    </nav>
+
+    <!-- <nav id="btNv4"><button id="btn4" onclick="searchPr()">GO!</button></nav> -->
+
+
+	<nav id="sperrDiv">
+	
+	<nav id="prs5">
+	  <input type=" text" id="queryPrSp" oninput="this.value = this.value.toUpperCase()" maxlength="20" name="qprSp" placeholder="Produktname...">
+	</nav>
+	<span>&nbsp; &nbsp; &nbsp; &nbsp; in</span>
+	<nav id="prs6" style="margin-bottom: 10px;">
+	  <input type=" text" id="queryPrKat" oninput="this.value = this.value.toUpperCase()" maxlength="5" name="qprKat" placeholder="Sparte...">
+	</nav>
+    <nav id="btn_Kat" style="margin-bottom: 1px;"><button id="btn_SR_Kat" onclick="searchErw()">erweiterte Suche</button></nav>	
+	
+	</nav>
+	
+	
+    <nav class="toggle" >&nbsp; 1 Öl & Essig</nav>
+            <div class="navbars">
+                <nav>1-1 Weinessig & Balsamessig</nav>
+                <nav>1-2 Speiseöl</nav>
+				<nav>1-3 Olivenöl & Natives Olivenöl Extra</nav>
+            </div>
+
+    <nav class="toggle" >&nbsp; 2 Konserven</nav>
+            <div class="navbars">
+                <nav>2-1 Pastasaucen</nav>
+                <nav>2-2 Fertiggerichte & Fertigsuppen</nav>
+                <nav>2-3 Gemüse & Hülsenfrüchte</nav>				
+                <nav>2-4 Vorspeisen in Öl und Essig</nav>				
+                <nav>2-5 Pate, Cremes, Ketchup & Mayo</nav>				
+                <nav>2-6 Senfsoße & Obstkonserven</nav>				
+                <nav>2-7 Oliven mit Stein</nav>				
+                <nav>2-8 Oliven ohne Stein</nav>                
+				<nav>2-9 Pesto</nav>						
+            </div>
+
+
+
+    <nav class="toggle" >&nbsp; 3 Kaffee & lösliche Getränke</nav>
+            <div class="navbars">
+                <nav>3-1 Lösliche Getränke</nav>
+                <nav>3-2 Brausepulver</nav>
+				<nav>3-3 Tee & Kamillentee</nav>
+                <nav>3-4 Bohnenkaffee</nav>				
+                <nav>3-5 Gemahlener Espresso</nav>				
+                <nav>3-6 Pads</nav>				
+								
+            </div>
+
+    <nav class="toggle" >&nbsp; 4 Mehl, Griess & Zucker</nav>
+            <div class="navbars">
+                <nav>4-1 Zucker & Süßstoffe</nav>
+                <nav>4-2 Mehl</nav>
+				<nav>4-3 Griess & Polenta</nav>
+            </div>
+			
+    <nav class="toggle" >&nbsp; 5 Fleisch & Fisch</nav>
+            <div class="navbars">
+                <nav>5-1 Konserviertes Fleisch</nav>
+                <nav>5-2 Konservierter Fisch</nav>
+            </div>
+
+    <nav class="toggle" >&nbsp; 6 Teigwaren & Reis</nav>
+            <div class="navbars">
+                <nav>6-1 Reis / Risotti</nav>
+                <nav>6-2 Teigwaren aus Hartweizengrieß</nav>
+				<nav>6-3 Eiernudeln</nav>
+                <nav>6-4 Vollkornnudeln</nav>				
+                <nav>6-5 Aromatisierte Risotti</nav>				
+                <nav>6-6 Aromatisierte Nudeln</nav>				
+                <nav>6-7 Lasagne & Cannelloni</nav>
+            </div>
+
+    <nav class="toggle" >&nbsp; 7 Frischware</nav>
+            <div class="navbars">
+			    <nav>&nbsp; 7-0 Verpackungen</nav>
+                <nav>&nbsp; 7-1 Gekochter Schinken</nav>
+                <nav>&nbsp; 7-2 Käse</nav>
+				<nav>&nbsp; 7-3 Rohschinken</nav>
+                <nav>&nbsp; 7-4 Wurstwaren</nav>				
+                <nav>&nbsp; 7-5 Fisch, getrocknet</nav>				
+                <nav>&nbsp; 7-6 Süsswaren</nav>				
+                <nav>&nbsp; 7-7 Theke</nav>
+                <nav>&nbsp; 7-8 Fertiggerichte</nav>
+				<nav>&nbsp; 7-9 Frische Nudeln</nav>
+                <nav>7-10 Saucen</nav>				
+                <nav>7-11 Eingelegte Ware</nav>				
+                <nav>7-12 SB-Ware</nav>
+                <nav>7-13 Brote, belegte Brote</nav>				
+                <nav>7-14 Eierzeugnisse</nav>					
+            </div>
+
+    <nav class="toggle" >&nbsp; 8 Theke</nav>
+            <div class="navbars">
+                <nav>8-1 Theke</nav>
+            </div>		
+
+
+    <nav class="toggle" >&nbsp; 9 Tiefgekühlte Produkte</nav>
+            <div class="navbars">
+                <nav>9-1 Tiefgekühlte Vorspeisen</nav>
+                <nav>9-2 Tiefgekühlte Hauptspeisen</nav>
+				<nav>9-3 Tiefgekühlte Beilagen</nav>
+                <nav>9-4 Tiefgekühlte Eiscreme</nav>				
+                <nav>9-5 Tiefgekühlte Torten</nav>	
+            </div>			
+			
+    <nav class="toggle" >10 Weine & Sekte</nav>
+            <div class="navbars">
+                <nav>10-1 Weissweine</nav>
+                <nav>10-2 Rotweine</nav>
+				<nav>10-3 Roseweine</nav>
+                <nav>10-4 Dessertweine</nav>				
+                <nav>10-5 Spumante & Prosecco</nav>	
+            </div>		
+
+    <nav class="toggle" >11 Getränke</nav>
+            <div class="navbars">
+                <nav>11-1 Fruchtsäfte & Fruchtnektare</nav>
+                <nav>11-2 Limonaden</nav>
+				<nav>11-3 Sirupe</nav>
+                <nav>11-4 Bier</nav>				
+                <nav>11-5 Eistee</nav>	
+            </div>					
+
+    <nav class="toggle" >12 Mineralwasser</nav>
+            <div class="navbars">
+                <nav>12-1 Mineralwasser mit Kohlensäure</nav>
+                <nav>12-2 Mineralwasser ohne Kohlensäure</nav>
+            </div>
+
+    <nav class="toggle" >13 Ostern</nav>
+            <div class="navbars">
+                <nav>13-1 Ostereier</nav>
+                <nav>13-2 Colomba & Torten</nav>
+            </div>
+
+    <nav class="toggle" >14 Weihnachten</nav>
+            <div class="navbars">
+                <nav>14-1 Panettone</nav>
+                <nav>14-2 Geschenkverpackungen & Körbe</nav>
+				<nav>14-3 Torrone</nav>
+                <nav>14-4 Weihnachtsplätzchen</nav>				
+                <nav>14-5 Pandoro</nav>				
+                <nav>14-6 Kuchen & Torten</nav>				
+                <nav>14-7 Dreikönigsfest</nav>
+                <nav>14-8 Restposten</nav>
+				<nav>14-9 Sonstige Produkte</nav>
+            </div>
+
+    <nav class="toggle" >15 Spirituosen & Grappas</nav>
+            <div class="navbars">
+                <nav>15-1 Spirituosen</nav>
+                <nav>15-2 Grappas</nav>
+				<nav>15-3 Aperitifs mit Alkohol</nav>
+            </div>
+			
+    <nav class="toggle" >16 Aperitifs</nav>
+            <div class="navbars">
+                <nav>16-1 Alkoholfreie Aperitifs</nav>
+            </div>					
+
+    <nav class="toggle" >17 Reinigungs- & Waschmittel</nav>
+            <div class="navbars">
+                <nav>17-1 Reinigungsmittel</nav>
+                <nav>17-2 Waschmittel</nav>
+				<nav>17-3 Spülmittel</nav>
+                <nav>17-4 Weichspüler</nav>		
+                <nav>17-5 Bügelhilfe</nav>					
+            </div>					
+				
+    <nav class="toggle" >18 Babynahrungsmittel</nav>
+            <div class="navbars">
+                <nav>18-1 Babynahrungen</nav>
+                <nav>18-2 Kekse</nav>
+				<nav>18-3 Nudeln & Suppen</nav>
+                <nav>18-4 Kräuter- & Kamillentee</nav>		
+            </div>		
+
+    <nav class="toggle" >19 Gebackene Produkte</nav>
+            <div class="navbars">
+                <nav>&nbsp; 19-1 Feingebäck</nav>
+                <nav>&nbsp; 19-2 Salzgebäck</nav>
+				<nav>&nbsp; 19-3 Kekse</nav>
+                <nav>&nbsp; 19-4 Kuchen & Torten</nav>				
+                <nav>&nbsp; 19-5 Croissants</nav>				
+                <nav>&nbsp; 19-6 Cantuccini & Mandelgebäck</nav>				
+                <nav>&nbsp; 19-7 Brot & Tramezzini</nav>
+                <nav>&nbsp; 19-8 Amaretti</nav>
+				<nav>&nbsp; 19-9 Grissini</nav>
+                <nav>19-10 Chips</nav>				
+                <nav>19-11 Taralli</nav>				
+                <nav>19-12 Crackers</nav>									
+            </div>
+
+    <nav class="toggle" >20 Tomaten</nav>
+            <div class="navbars">
+                <nav>20-1 Passierte Tomaten</nav>
+                <nav>20-2 Geschälte Tomaten & ähnliches</nav>
+				<nav>20-3 Tomatenmark</nav>
+            </div>
+
+    <nav class="toggle" >21 Gewürze & Salz</nav>
+            <div class="navbars">
+                <nav>21-1 Gewürze & Safran</nav>
+                <nav>21-2 Suppenwürfel & Geschmacksverstärker</nav>
+				<nav>21-3 Salz</nav>
+            </div>
+
+    <nav class="toggle" >23 Frische Pasta & Pizza</nav>
+            <div class="navbars">
+                <nav>23-1 Tortellini, Tortelloni & Ravioli</nav>
+                <nav>23-2 Gnocchi & Lasagne</nav>
+				<nav>23-3 Frische Nudeln</nav>
+                <nav>23-4 Fertiggerichte</nav>					
+            </div>
+
+
+    <nav class="toggle" >24 Milchprodukte & Desserts</nav>
+            <div class="navbars">
+                <nav>24-1 Milch</nav>
+                <nav>24-2 Desserts</nav>
+				<nav>24-3 Molkereiprodukte</nav>
+                <nav>24-4 Kochsahne & Bechamel</nav>					
+            </div>
+			
+    <nav class="toggle" >25 Haushaltsware</nav>
+            <div class="navbars">
+                <nav>25-1 Mokkamaschinen</nav>
+                <nav>25-2 Milchaufschäumer & Espressozubehören</nav>
+				<nav>25-3 Einweg-Plastik</nav>
+                <nav>25-4 Küche & Bad</nav>					
+            </div>
+
+    <nav class="toggle" >26 Kosmetikartikel</nav>
+            <div class="navbars">
+                <nav>26-1 Gesichtspflege</nav>
+                <nav>26-2 Körperpflege</nav>
+				<nav>26-3 Haarpflege</nav>
+                <nav>26-4 Zahnpflege</nav>				
+                <nav>26-5 Bartpflege</nav>	
+            </div>
+				
+    <nav class="toggle" >27 Frühstücksprodukte</nav>
+            <div class="navbars">
+                <nav>27-1 Brotaufstrich</nav>
+                <nav>27-2 Honig</nav>
+				<nav>27-3 Zerealien & Pancakes</nav>
+                <nav>27-4 Zwieback</nav>				
+            </div>
+				
+    <nav class="toggle" >29 Süßwaren</nav>
+            <div class="navbars">
+                <nav>29-1 Tafelschokolade & Schokoriegel</nav>
+                <nav>29-2 Pralinen & Confetti</nav>
+				<nav>29-3 Bonbons & Chewing-gum</nav>
+            </div>
+
+    <nav class="toggle" >31 Bio- und glutenfreie Produkte</nav>
+            <div class="navbars">
+                <nav>31-1 Bio Produkte</nav>
+                <nav>31-2 Glutenfrei Produkte</nav>
+            </div>
+
+    <nav class="toggle" >33 Konditoreipräparate</nav>
+            <div class="navbars">
+                <nav>33-1 Backzutaten & Tortenpräparate</nav>
+                <nav>33-2 Pudding- und Eispräparat</nav>
+				<nav>33-3 Pflanzliche Schlagsahne</nav>				
+            </div>
+	 
+    </div>
+  <div id="cont0">
+
+    <span id='datum'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+      Letztes Update: 9. April 2025 (8:00 Uhr) &nbsp; &nbsp;  &nbsp;</span>
+      <span id='legende' style="font-weight: bold; color: #C70039"></span>
+
+    <div id="searchD">
+
+      <section id="sect1">
+
+        <nav id="prs1" style="font-weight: bold">
+          &nbsp; Produktname:<br>
+          <input type=" text" id="queryPr" oninput="this.value = this.value.toUpperCase()" maxlength="30"
+            name="qpr" placeholder="Search...">
+        </nav>
+
+        <nav id="btNv1"><button id="btn1" onclick="searchPr()">GO!</button></nav>
+
+      </section>
+      <br>
+
+      <section id="sect2">
+
+        <nav id="prs2" style="font-weight: bold">
+          &nbsp; Artikel-Nr:<br>
+			<input type="number" id="queryNr" name="qnr" maxlength="5" placeholder=" Search...">
+		</nav>
+
+
+        <nav id="btNv2"><button id="btn2" onclick="searchNr()">GO!</button></nav>
+
+      </section>
+
+      <section id="sect3">
+        <nav id="prs3" style="font-weight: bold">
+          &nbsp; Plu-Nr:<br>
+			<input type="number" id="queryPlu" name="qpl" maxlength="3" placeholder=" Search...">
+		</nav>
+
+
+        <nav id="btNv3"><button id="btn3" onclick="searchPlu()">GO!</button></nav>
+
+      </section>
+
+      <section id="sect4">
+        <nav id="prs4" style="font-weight: bold; color: #C70039">
+          Ergebnisse:<br>
+          <!-- <span id="erg" style="font-weight: bold; font-size: 18px;"></span> -->
+		  <span> &nbsp; &nbsp; &nbsp;  &nbsp; </span><span id="erg"></span>
+        </nav>
+
+      </section>
+
+
+
+
+    </div>
+
+    <div id="cont1">
+
+      <div id="productSearched"></div>
+      <div id="freieArtikel"></div>
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>	
+  <script src="script.js"></script>
+  <!-- <script src="scriptVK.js"></script>   -->
+  <script src="scriptToogle.js"></script>
+
+<!-- <script src="script.js"></script> -->
+  
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.core.min.js"></script> -->
+
+</body>
+
+</html>
+
+
+<!-- <div>EAN-Code: ${ean}</div> -->

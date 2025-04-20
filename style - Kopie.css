@@ -1,0 +1,229 @@
+@font-face {
+  font-family: 'NotoSans';
+  src: url('fonts/NotoSans-Regular.ttf') format('truetype');
+}
+
+@media (max-width: 600px) {
+  body {
+    flex: 100%;
+  }
+}
+
+#erg {
+	font-weight: bold; 
+	font-size: 18px;
+	color: black;	
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  font-family: 'NotoSans';
+  font-size: 13px;
+  background-color: white;
+  overflow: auto;
+}
+
+html { height: 100%; width: 100%; }
+
+#contA {
+	display: flex;
+	/* border: 1px solid red; */
+}
+
+
+#contL {
+  width: 200px;
+  /* border: 1px solid blue; */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#searchD { display: flex; 
+/* align-items: center;  */
+}
+
+
+#queryPr { width: 230px; }
+#queryNr { width: 80px; }
+#queryPlu { width: 80px; }
+
+#queryPrSp { width: 155px; background-color: #DAF7A6;}
+#queryPrKat { width: 80px; background-color: #DAF7A6;}
+#queryEAN { width: 118px; margin-right: 5px; background-color: #E6E6FA;}
+
+
+#btNv1,#btNv2,#btNv3,#btNv4  {
+  height: 25px;
+  /* border: 1px solid blue; */
+  padding-left: 4px;
+}
+
+button { font-family: NotoSans; }
+
+#btNv1 { width: 240px; }
+#btNv2,#btNv3 { width: 88px; }
+#btn1 { width: 240px; }
+#btn2,#btn3 { width: 88px; }
+
+#btn_ANG { background-color: yellow; border: 1px solid black; border-radius: 3px;}
+#btn_ANG:hover { background-color: #FFE4B5; }
+#btn_ANG:active { background-color: #f1d9af; }
+
+#btn_FRART { background-color: black; border: 1px solid black; border-radius: 3px;}
+#btn_FRART:hover { background-color: #bd391b; }
+#btn_FRART:active { background-color: #f5451e; }
+
+/* #f5451e # #ba2a0a */
+#sperrDiv { 
+	padding: 5px; 
+	border: 1px solid gray; 
+	border-radius: 5px;
+	margin-bottom: 10px;
+	background-color: #ecf2e1;;
+	
+}
+
+#btn_SR_Kat { background-color: #ccf1d0; border: 1px solid rgb(187, 186, 186); border-radius: 3px;}
+#btn_SR_Kat:hover { background-color: #cbdeac; }
+#btn_SR_Kat:active { background-color: #d9ecb9; }
+
+
+/* #btn_SR_Kat { font-weight: bold; } */
+	
+/* #btn_SR_Kat { background-color: black; color: white; } */
+
+
+#prs1,#prs2,#prs3,#prs4 {
+  height: 40px;
+  /* border: 1px solid red; */
+  padding: 3px;
+  margin: 3px;
+}
+
+#prs1 { width: 240px; }
+#prs2,#prs3,#prs4 { width: 88px; }
+
+
+#sect1,#sect2,#sect3,#sect4 {
+  height: 90px;
+  /* border: 1px solid gray; */
+  /* margin: 5px; */
+  box-sizing: border-box;
+}
+
+#sect1 { 
+	width: 260px; 
+	margin: 5px 20px 5px;
+	padding-left: 12px; 
+}
+	
+#sect2 { width: 110px; margin: 5px;}
+/* #sect3 { width: 260px; margin: 5px;} */
+
+#sect3 { width: 110px; margin: 5px;}
+#sect4 { width: 110px; margin: 5px;}
+
+.productContainer { display: flex; flex-direction: row; }
+.productImage { height: 400px;   width: 300px; }
+#productSearched { 
+	/* border: 1px solid gray;  */
+	margin: 5px; }
+
+#freieArtikel { 
+	/* border: 1px solid gray;  */
+	margin: 25px; 
+	width: 500; }
+
+.bild {
+  border: 1px solid white;
+  width: 260px;
+  height: 320px;
+  /* margin: 5px; */
+  margin: 5px 20px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bild img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.abstand1 {
+	margin-bottom: 10px;
+}	
+
+.abstand2 {
+	margin-bottom: 10px;
+	margin-right: 5px;
+	
+}	
+
+#btn_PANETT, #btn_PANDOR, #btn_WEIHN { background-color: #DFF6FF; border: 1px solid black; border-radius: 3px;}
+#btn_PANETT:hover, #btn_PANDOR:hover, #btn_WEIHN:hover { background-color: #A0E4FE; }
+#btn_PANETT:active, #btn_PANDOR:active, #btn_WEIHN:active { background-color: #5DCFFC; }
+
+
+
+.prddaten {
+  /* border: 1px solid green; */
+  width: 350px;
+  /* width: 340px; */
+  height: 320px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+::placeholder { font-family: 'NotoSans'; }
+
+input {
+  height: 20px;
+  border: 1px;
+  border-color: white;
+  background-color: #FAF9AD;
+  padding-left: 6px;
+  font-family: 'NotoSans';
+}
+
+.navbars {
+  display: none;
+  font-size: 10px;
+  padding-left: 14px;
+  color: blue;
+}
+
+.navbars.active {
+  display: block;
+}
+
+.toggle:hover {
+  color: #C70039;
+  cursor:pointer;
+}
+
+
+/*
+
+
+
+input {
+  font-family: 'NotoSans-Regular.ttf';
+   font-size: 18px; 
+  font-weight: bold; 
+}
+*/
